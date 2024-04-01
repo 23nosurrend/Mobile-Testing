@@ -1,10 +1,20 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text,Image, View } from 'react-native';
 
 export default function App() {
+  const handlePress=()=> console.log("keynes it is  your turn")
+  
   return (
     <View style={styles.container}>
-      <Text>Open up App.tsx to start working on your app!</Text>
+      <Text numberOfLines={1} onPress={handlePress}>Welcome to Virtual Library</Text>
+      <Image
+       
+        fadeDuration={10000}
+        source={{
+        width: 200,
+        height:300,
+        uri:"https://picsum.photos/id/1/200/300",
+      }}/>
       <StatusBar style="auto" />
     </View>
   );
