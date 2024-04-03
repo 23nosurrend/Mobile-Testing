@@ -1,30 +1,30 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text,Image, View } from 'react-native';
+// import { StatusBar } from 'expo-status-bar'; this was default importation 
+import { StyleSheet, Text, Image, View, TouchableHighlight, SafeAreaView, Button, Alert, Platform, StatusBar, Dimensions } from 'react-native';
+import HomeScreen from "./screens/HomeScreen"
+import LoginScreen from './screens/LoginScreen';
 
 export default function App() {
-  const handlePress=()=> console.log("keynes it is  your turn")
+  
   
   return (
-    <View style={styles.container}>
-      <Text numberOfLines={1} onPress={handlePress}>Welcome to Virtual Library</Text>
-      <Image
-       
-        fadeDuration={10000}
-        source={{
-        width: 200,
-        height:300,
-        uri:"https://picsum.photos/id/1/200/300",
-      }}/>
-      <StatusBar style="auto" />
-    </View>
+    <SafeAreaView style={styles.container}>
+      <HomeScreen />
+      {/* <LoginScreen/> */}
+      
+    </SafeAreaView>
+    
+    
   );
 }
+
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    justifyContent: "center",
+    // alignItems:"center",
     backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
+    paddingTop:Platform.OS==='android'? StatusBar.currentHeight:0
+    
   },
 });
